@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bistro | Menu</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bistro-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/settings.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ccss/owl.transitions.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.fancybox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/zerogrid.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loader.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.css') }}">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!--Loader-->
+<div class="loader">
+    <div class="cssload-container">
+        <div class="cssload-circle"></div>
+        <div class="cssload-circle"></div>
+    </div>
+</div>
+
+<!--Top bar-->
+<div class="topbar">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="pull-left hidden-xs">bistro Healthcare Come to Expect the Best in Town</p>
+                <p class="pull-right"><i class="fa fa-ambulance"></i>Emergency Line (+001) 321-125-152</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Header-->
+<header id="main-navigation">
+    <div id="navigation" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="false">
+                                <span class="icon-bar top-bar"></span>
+                                <span class="icon-bar middle-bar"></span>
+                                <span class="icon-bar bottom-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/index">
+                                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="img-responsive">
+                            </a>
+                        </div>
+
+                        <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/index">Home</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/menu">Menu</a></li>
+                                <li><a href="/order">Order Now</a></li>
+                                <li><a href="/donate">Donate</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Account
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/signin">Login</a></li>
+                                        <li><a href="/delete_user" id="delete-account-btn">Delete Account</a></li>
+                                        <li><a href="/Update" id="update-account-btn">Update Account</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!--Page header & Title-->
+<section id="page_header">
+    <div class="page_title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="title">Menu</h2>
+                    <p>Everything in our menu is great!!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Pricings-->
+<section id="pricing" class="padding-top">
+    <div class="container">
+        <div class="row" id="burger-section">
+            <div class="col-md-12">
+                <h2 class="heading">Burger</h2>
+                <hr class="heading_space">
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>Gramercy Tavern</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Shake Shack</b> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$49</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Gott's Roadside</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>Emmy Squared</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Shake Shack</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$89</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Westholme Wagyu</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$175.95</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="steak-section">
+            <div class="col-md-12">
+                <h2 class="heading">Steaks</h2>
+                <hr class="heading_space">
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>Flannery Beef</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Chesapeake Bay Gourmet</b>
+                                <strong>$49</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Saltbrick Prime</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>Old Homestead Steakhouse</b>
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Snake River Farms</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$89</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Peter Luger Steak House</b> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$175.95</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="drinks-section">
+            <div class="col-md-12">
+                <h2 class="heading">Drinks</h2>
+                <hr class="heading_space">
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>New Territories</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Guy Fieri</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$49</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="price padding-bottom">
+                    <div class="price_body">
+                        <ul class="pricing_feature">
+                            <li>
+                                <b>Woodford Reserve</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                            <li>
+                                <b>Franco's Hurricane Mix</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong>$99</strong>
+                                <button class="increment"> ADD</button> &nbsp;
+                                <span class="quantity"> 0 </span> &nbsp;
+                                <button class="decrement"> REMOVE</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cart Details Section -->
+<section id="cart_details" class="padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="heading">Cart Details</h2>
+                <hr class="heading_space">
+            </div>
+            <!-- Inside the #cart_details section -->
+            <div class="col-md-12">
+                <div id="cartDetailsContainer">
+                    <!-- Cart items will be displayed here -->
+                </div>
+                <button id="orderButton" class="btn btn-primary"><b>Proceed to Order</b></button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--Footer-->
+<footer class="padding-top bg_black">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Who are we?</h4>
+          <hr class="half_space">
+          <p class="half_space"></p>
+          <p>
+              Welcome to JKS, a culinary haven nestled in the heart of Lahore. Indulge in a vibrant fusion of flavors. At our resturant, we pride ourselves on crafting a memorable dining experience.
+              Immerse yourself in our warm and inviting atmosphere, where exceptional service meets exquisite flavors.
+          </p>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Quick Links</h4>
+          <hr class="half_space">
+          <ul class="widget_links">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+              <li><a href="/menu">Menu</a></li>
+              <li><a href="/order">Order Now</a></li>
+            <li><a href="/donate">Donate</a></li>
+  
+            <!-- <li><a href="./account/register.php">Order Now</a></li> -->
+            
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Newsletter</h4>
+          <hr class="half_space">
+          <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+          <div id="result1" class="text-center"></div>        
+          
+         <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+            <div class="form-group">
+              <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn-submit button3" value="Subscribe" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-3 col-sm-6 footer_column">
+          <h4 class="heading">Get in Touch</h4>
+          <hr class="half_space">
+          <p></p>
+          <p class="address"><i class="icon-location"></i>JKS, Opposite S.L.Raheja Hospital, Mahim Causeway, Mahim (West), Lahore.</p>
+          <p class="address"><i class="fa fa-phone"></i>(+91) 892 808 5056</p>
+          <p class="address"><i class="icon-dollar"></i><a href="office@jks.com">office@jks.com</a></p>
+        </div> 
+      </div>
+      <div class="row">
+       <div class="col-md-12">
+          <div class="copyright clearfix">
+            <p>Copyright &copy; 2023 JKS. All Right Reserved</p>
+            <ul class="social_icon">
+                 <li><a href="#" class="facebook"><i class="icon-facebook5"></i></a></li>
+                 <li><a href="#" class="twitter"><i class="icon-twitter4"></i></a></li>
+                 <li><a href="#" class="google"><i class="icon-google"></i></a></li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <a href="#." id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cart = [];
+
+
+            // Get all the increment and decrement buttons
+            const incrementButtons = document.querySelectorAll(".increment");
+            const decrementButtons = document.querySelectorAll(".decrement");
+            const quantityElements = document.querySelectorAll(".quantity");
+
+            // Function to handle the click on the increment buttons
+            function handleIncrement(event) {
+                const index = Array.from(incrementButtons).indexOf(event.target);
+                const quantityElement = quantityElements[index];
+                const quantity = parseInt(quantityElement.innerText, 10);
+                quantityElement.innerText = quantity + 1;
+                updateCart(index, quantity + 1);
+                displayCartInMenuPage(); // Update cart display after modification
+
+            }
+
+            // Function to handle the click on the decrement buttons
+            function handleDecrement(event) {
+                const index = Array.from(decrementButtons).indexOf(event.target);
+                const quantityElement = quantityElements[index];
+                const quantity = parseInt(quantityElement.innerText, 10);
+                if (quantity > 0) {
+                    quantityElement.innerText = quantity - 1;
+                    updateCart(index, quantity - 1);
+                }
+                displayCartInMenuPage(); // Update cart display after modification
+
+            }
+
+            // Add click event listeners to increment and decrement buttons
+            incrementButtons.forEach(button => button.addEventListener("click", handleIncrement));
+            decrementButtons.forEach(button => button.addEventListener("click", handleDecrement));
+
+            function updateCart(index, quantity) {
+                const itemName = document.querySelectorAll(".pricing_feature li b")[index].innerText;
+                console.log(itemName)
+                const itemPrice = parseFloat(document.querySelectorAll(".pricing_feature li strong")[index].innerText.slice(1));
+                cart[index] = {
+                    name: itemName,
+                    price: itemPrice,
+                    quantity: quantity,
+                };
+                // Save the updated cart to localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+                displayCartInMenuPage(); // Update cart display after modification
+
+            }
+
+            // Function to load cart data from localStorage
+            function loadCartFromLocalStorage() {
+                const cartData = localStorage.getItem("cart");
+                if (cartData) {
+                    cart = JSON.parse(cartData);
+                }
+            }
+
+            // Call the function to load cart data from localStorage when the page loads
+            loadCartFromLocalStorage();
+
+            function displayCartInMenuPage() {
+                // Clear any previous cart items in the container
+                const cartDetailsContainer = document.getElementById("cartDetailsContainer");
+                cartDetailsContainer.innerHTML = "";
+
+                // Calculate total amount and initialize a variable to store it
+                let totalAmount = 0;
+
+                // Loop through the cart items and create elements to display them
+                cart.forEach(item => {
+                    // Check if the item is not null or undefined before accessing its properties
+                    if (item && item.name && item.price && item.quantity) {
+                        const itemElement = document.createElement("div");
+                        itemElement.innerHTML = `
+                <p>Name: ${item.name}</p>
+                <p>Price: $${item.price}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <hr>
+            `;
+                        cartDetailsContainer.appendChild(itemElement);
+
+                        // Calculate the subtotal for each item and add it to the total amount
+                        const subtotal = item.price * item.quantity;
+                        totalAmount += subtotal;
+                    }
+                });
+
+
+                // Update Proceed to Order button visibility based on the cart items
+                const proceedButton = document.getElementById("orderButton");
+                proceedButton.style.display = cart.length > 0 ? "block" : "none";
+
+                // Display the total amount at the end
+                const totalElement = document.createElement("div");
+                totalElement.innerHTML = `<p>Total Amount: $${totalAmount.toFixed(2)}</p>`;
+                cartDetailsContainer.appendChild(totalElement);
+            }
+
+
+// Call the function to display the cart items on page load
+            displayCartInMenuPage();
+
+            // Add a click event listener to the "Order" button
+            const orderButton = document.getElementById("orderButton");
+            orderButton.addEventListener("click", function () {
+                // Redirect users to the "my order.html" page
+                window.location.href = "/order";
+            });
+
+            // Function to display the cart items in "my order.html" page
+            function displayCartInOrderPage() {
+                // Replace this with your code to display the cart items in the "my order.html" page
+                // You can use DOM manipulation to add the cart items to the page.
+                console.log(cart);
+            }
+
+            // Function to proceed to the "my order.html" page
+            function proceedToOrderPage() {
+                // Save cart data to local storage
+                localStorage.setItem("cartData", JSON.stringify(cart));
+                // Redirect to the "my order.html" page
+                window.location.href = "/order";
+            }
+
+            // Add click event listeners to increment and decrement buttons
+            incrementButtons.forEach(button => button.addEventListener("click", handleIncrement));
+            decrementButtons.forEach(button => button.addEventListener("click", handleDecrement));
+
+           // Add a click event listener to a button that proceeds to the "my order.html" page#}
+//             const proceedButton = document.getElementById("orderButton");
+//             proceedButton.addEventListener("click", proceedToOrderPage);
+// // Add a click event listener to a button that displays the cart#}
+//             const displayCartButton = document.getElementById("displayCartButton");
+//             displayCartButton.addEventListener("click", displayCartInOrderPage);
+        });
+        // Assuming you have a button with an id 'delete-account-btn' that triggers the account deletion
+        document.getElementById('delete-account-btn').addEventListener('click', function () {
+            // Perform an asynchronous request to the Flask route for deleting the user
+            fetch('/delete_user')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert('Account deleted successfully!');
+                        // Redirect to a new page or perform any other actions after successful deletion
+                        // window.location.href = '/'; // Example redirect to the home page
+                    } else {
+                        alert('Failed to delete user data. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while deleting user data.');
+                    console.error(error);
+                });
+        });
+         // Assuming you have a button with an id 'update-account-btn' that triggers the account deletion
+         document.getElementById('update-account-btn').addEventListener('click', function () {
+            // Perform an asynchronous request to the Flask route for deleting the user
+            fetch('/delete_user')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert('Account updated successfully!');
+                        // Redirect to a new page or perform any other actions after successful deletion
+                        // window.location.href = '/'; // Example redirect to the home page
+                    } else {
+                        alert('Failed to update user data. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while updating user data.');
+                    console.error(error);
+                });
+        });
+
+    </script>
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/jquery.themepunch.tools.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.themepunch.revolution.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/revolution.extension.layeranimation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/revolution.extension.navigation.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/revolution.extension.parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/revolution.extension.slideanims.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/revolution.extension.video.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/slider.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/jquery.parallax-1.1.3.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.mixitup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-countTo.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/functions.js') }}" type="text/javascript"></script>
+
+</body>
+
+</html>

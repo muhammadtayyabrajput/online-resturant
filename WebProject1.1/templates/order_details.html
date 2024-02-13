@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>showOrders</title>">
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+    <style>
+        /* Custom CSS styles for the table */
+        #show {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #show th,
+        #show td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        #show thead th {
+            background-color: #f2f2f2;
+        }
+
+        #show tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #show tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        #mybutton {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: rgb(36, 187, 214);
+        }
+
+        #mybutton:hover {
+            background-color: rgb(88, 143, 143);
+
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <h1>Order details</h1>
+    <button id="mybutton">showOrders</button>
+    <table id="show" border="2">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>price</th>
+                <th>quantity</th>
+            </tr>
+        </thead>
+    </table>
+
+    
+
+    <script>
+        var myData;
+        var table; // DataTables instance
+
+        // Moved the initialization outside of the click event handler
+        $(document).ready(function () {
+            table = $('#show').DataTable({
+                columns: [
+                    { data: 'id' },
+                    { data: 'name' },
+                    { data: 'price' },
+                    { data: 'quantity' },
+                ]
+            });
+        });
+
+        $(document.body).on('click', "#mybutton", function (e) {
+            console.log("hello");
+            $.ajax({
+                type: "GET",
+                url: "/api/order_details",
+                success: function (response) {
+                    myData = response;
+                    console.log(myData);
+                    if (myData != null && myData.length > 0) {
+                        // Clear existing data before adding new data
+                        table.clear();
+                        table.rows.add(myData);
+                        table.draw();
+                    }
+                },
+                error: function (xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

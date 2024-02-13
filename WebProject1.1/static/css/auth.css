@@ -1,0 +1,171 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General styles */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/banner1.jpg);
+    background-color: rgba(255, 255, 255, 0.00001);
+    overflow: hidden;
+}
+.container {
+    max-width: 400px;
+    width: 90%;
+    background: transparent;
+    overflow: hidden;
+
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+     margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+button {
+    background-color: #e25111;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.button {
+    text-decoration: none;
+    color: #e25111;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover,
+.button:hover {
+    opacity: 0.8;
+}
+
+/* Additional Styles for Login Page */
+
+body.login-page {
+
+    background-size: cover;
+    background-position: center;
+}
+
+.container.login {
+    max-width: 400px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+}
+
+h2.login-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label.login-label {
+    color: #fff;
+}
+
+input.login-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+
+button.login-submit {
+    background-color: #e25111;
+    color: #fff;
+}
+
+/* Additional Styles for Register Page */
+
+body.register-page {
+
+    background-size: cover;
+    background-position: center;
+}
+
+.container.register {
+    max-width: 600px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+}
+
+h2.register-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label.register-label {
+    color: #333;
+}
+
+input.register-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #333;
+}
+
+button.register-submit {
+    background-color: #e25111 ;
+    color: #fff;
+}
+
+.form-container {
+    margin-top: 100px; /* Add margin from the top */
+    margin-bottom: 100px; /* Add margin from the bottom */
+}
+

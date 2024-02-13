@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bistro | Donate</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bistro-icons.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/settings.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navigation.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ccss/owl.transitions.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.fancybox.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/zerogrid.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loader.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap-datetimepicker.css') }}">
+
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<!--Loader-->
+<div class="loader">
+   <div class="cssload-container">
+     <div class="cssload-circle"></div>
+     <div class="cssload-circle"></div>
+   </div>
+</div>
+
+<!--Top bar-->
+<div class="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="pull-left hidden-xs">bistro Healthcare Come to Expect the Best in Town</p>
+        <p class="pull-right"><i class="fa fa-ambulance"></i>Order Online 111-123-6789</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Header-->
+<header id="main-navigation">
+  <div id="navigation" data-spy="affix" data-offset-top="20">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <nav class="navbar navbar-default">
+                      <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fixed-collapse-navbar" aria-expanded="false">
+                              <span class="icon-bar top-bar"></span>
+                              <span class="icon-bar middle-bar"></span>
+                              <span class="icon-bar bottom-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="/index">
+                              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="img-responsive">
+                          </a>
+                      </div>
+
+                      <div id="fixed-collapse-navbar" class="navbar-collapse collapse navbar-right">
+                          <ul class="nav navbar-nav">
+                              <li><a href="/index">Home</a></li>
+                              <li><a href="/about">About Us</a></li>
+                              <li><a href="/menu">Menu</a></li>
+                              <li><a href="/order">Order Now</a></li>
+                              <li><a href="/donate">Donate</a></li>
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                      Account
+                                      <span class="caret"></span>
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                      <li><a href="/signin">Login</a></li>
+                                      <li><a href="/delete_user" id="delete-account-btn">Delete Account</a></li>
+                                      <li><a href="/Update" id="update-account-btn">Update Account</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>
+
+
+<!--Page header & Title-->
+<section id="donate_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="text-left">
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          <h2 class="don"><span>Donate </span>   Now</h2>
+            <br>
+          <p>"Sharing food is an act of compassion, where a single <br>meal can make a world of difference".</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <!-- Add content for the right side of the section here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="order-form" class="order-page">
+  <div class="container order_form padding">
+    <div class="row">
+      <div class="col-md-12 appointment_form">
+        <h2 class="heading">Donate Online</h2>
+        <hr class="heading_space">
+      <div class="row">
+       <div class="col-md-8">
+       <form  id="order_form"  action="/donateForm" method="post" class="callus">
+            <div class="row">
+            <div class="form-group col-md-12">
+            <div id="result" class="text-center"></div></div></div>
+             <div class="row">
+             <div class="form-group col-md-12">
+            <p>Welcome to our food delivery website, where we not only strive to satisfy
+                your hunger but also aim to make a positive impact on the community we serve.
+                Our "Donate Food" initiative is at the heart of our mission, and we encourage
+                you to join us in this noble endeavor.  By donating food, you play a crucial role in
+                combating hunger and food insecurity among the less fortunate. Your act of giving not
+                only fills empty stomachs but also warms hearts with the knowledge that you have made a
+                genuine difference. Embrace the power of generosity, and let us embark on this journey
+                of making a lasting impact on the lives of our fellow community members.
+                Join us today in donating food and spread the joy of giving!</p>
+            </div></div>
+              <div class="row">
+                <h1>NGO 1</h1>
+                <h3>Account Details:</h3>
+                <p>
+                  Name:John Smith<br>
+                  Accont Number:283838292938<br>
+                  Bank: ABCD <br>
+                </p><br>
+           </div>
+           <div class="row">
+            <h1>NGO 1</h1>
+            <h3>Account Details:</h3>
+            <p>
+              Name:John Smith<br>
+              Accont Number:283838292938<br>
+              Bank: ABCD <br>
+            </p><br>
+       </div>
+       <div class="row">
+        <h1>NGO 1</h1>
+        <h3>Account Details:</h3>
+        <p>
+          Name:John Smith<br>
+          Accont Number:283838292938<br>
+          Bank: ABCD <br>
+        </p><br>
+   </div>
+      </div>
+      <p style="color: red;">{{error}}</p>
+      <div class="col-md-3">
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</section>
+
+
+
+<!--Footer-->
+<footer class="padding-top bg_black">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Who are we?</h4>
+        <hr class="half_space">
+        <p class="half_space"></p>
+        <p>
+            Welcome to JKS, a culinary haven nestled in the heart of Lahore. Indulge in a vibrant fusion of flavors. At our resturant, we pride ourselves on crafting a memorable dining experience.
+            Immerse yourself in our warm and inviting atmosphere, where exceptional service meets exquisite flavors.
+        </p>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Quick Links</h4>
+        <hr class="half_space">
+        <ul class="widget_links">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/order">Order Now</a></li>
+          <li><a href="/donate">Donate</a></li>
+
+          <!-- <li><a href="./account/register.php">Order Now</a></li> -->
+          
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Newsletter</h4>
+        <hr class="half_space">
+        <p class="icon"><i class="icon-dollar"></i>Sign up with your name and email to get updates fresh updates.</p>
+        <div id="result1" class="text-center"></div>        
+        
+       <form action="http://themesindustry.us13.list-manage.com/subscribe/post-json?u=4d80221ea53f3a4487ddebd93&id=494727d648&c=?" method="get" onSubmit="return false" class="newsletter">
+          <div class="form-group">
+            <input type="email" placeholder="E-mail Address" required name="EMAIL" id="EMAIL" class="form-control" />
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn-submit button3" value="Subscribe" />
+          </div>
+        </form>
+      </div>
+      <div class="col-md-3 col-sm-6 footer_column">
+        <h4 class="heading">Get in Touch</h4>
+        <hr class="half_space">
+        <p></p>
+        <p class="address"><i class="icon-location"></i>JKS, Opposite S.L.Raheja Hospital, Mahim Causeway, Mahim (West), Lahore.</p>
+        <p class="address"><i class="fa fa-phone"></i>(+91) 892 808 5056</p>
+        <p class="address"><i class="icon-dollar"></i><a href="office@jks.com">office@jks.com</a></p>
+      </div> 
+    </div>
+    <div class="row">
+     <div class="col-md-12">
+        <div class="copyright clearfix">
+          <p>Copyright &copy; 2023 JKS. All Right Reserved</p>
+          <ul class="social_icon">
+               <li><a href="#" class="facebook"><i class="icon-facebook5"></i></a></li>
+               <li><a href="#" class="twitter"><i class="icon-twitter4"></i></a></li>
+               <li><a href="#" class="google"><i class="icon-google"></i></a></li>
+              </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Assuming you have a button with an id 'delete-account-btn' that triggers the account deletion
+  document.getElementById('delete-account-btn').addEventListener('click', function () {
+            // Perform an asynchronous request to the Flask route for deleting the user
+            fetch('/delete_user')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert('Account deleted successfully!');
+                        // Redirect to a new page or perform any other actions after successful deletion
+                        // window.location.href = '/'; // Example redirect to the home page
+                    } else {
+                        alert('Failed to delete user data. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while deleting user data.');
+                    console.error(error);
+                });
+        });
+         // Assuming you have a button with an id 'update-account-btn' that triggers the account deletion
+         document.getElementById('update-account-btn').addEventListener('click', function () {
+            // Perform an asynchronous request to the Flask route for deleting the user
+            fetch('/delete_user')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert('Account updated successfully!');
+                        // Redirect to a new page or perform any other actions after successful deletion
+                        // window.location.href = '/'; // Example redirect to the home page
+                    } else {
+                        alert('Failed to update user data. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    alert('An error occurred while updating user data.');
+                    console.error(error);
+                });
+        });
+
+</script>
+
+<a href="#." id="back-top"><i class="fa fa-angle-up fa-2x"></i></a>
+
+<script src="{{ url_for('static', filename='js/jquery-2.2.3.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/jquery.themepunch.tools.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.themepunch.revolution.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/revolution.extension.layeranimation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/revolution.extension.navigation.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/revolution.extension.parallax.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/revolution.extension.slideanims.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/revolution.extension.video.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/slider.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='js/jquery.parallax-1.1.3.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.mixitup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-countTo.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.appear.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.fancybox.js') }}"></script>
+<script src="{{ url_for('static', filename='js/functions.js') }}" type="text/javascript"></script>
+
+</body>
+</html>
+
+
